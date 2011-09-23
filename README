@@ -1,0 +1,3 @@
+This app is a lightweight blogging app built on top of web.py.
+
+It will intially serve content from flat files and use sqlite for a db. That's really all for now.
