@@ -1,15 +1,19 @@
 import web
-from setup import SkeleSetup
+import controllers
+import models
 
 urls = (
-        '/setup', 'setup'
+        '/', 'controllers.allPosts',
+        '/add', 'controllers.addPost',
+        '/new', 'controllers.newPost',
+        '/setup', 'controllers.setup',
+        '/get/?', 'controllers.getAllPosts',
+        '/get/(\\w+)/?', 'controllers.getYearPosts',
+        '/get/(\\w+)/(\\w+)/?', 'controllers.getMonthPosts',
+        '/get/(\\w+)/(\\w+)/(\\w+)/?', 'controllers.getDayPosts'
         )
 
+### Templates
 app = web.application(urls, globals())
-
-class setup:
-    def GET(self):
-        #Here, we initialize a Sqlite Database and create the necessary tables
-        return SkeleSetup()
 
 if __name__ == "__main__": app.run()
