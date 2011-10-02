@@ -1,3 +1,11 @@
-This app is a lightweight blogging app built on top of web.py.
+This is a lightweight blogging app built on top of web.py.
 
-It will intially serve content from flat files and use sqlite for a db. That's really all for now.
+It uses Dropbox as a filestore to sync flat files, which will serve as
+the backend. This gives the user full control over the backend from
+anywhere.
+
+Upon login, the user will be prompted to log in to dropbox and then to
+select a folder to use as the directory to store all posts.
+
+Posts are stored in directory split by date, in the form
+YYYY/MM/DD. Files can be stored in either Markdown or HTML format.
